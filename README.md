@@ -83,6 +83,11 @@ Requires a CUDA GPU (AlphaFold2 and RFdiffusion inference). Originally run on Go
 - Sequence design: [ProteinMPNN](https://github.com/dauparas/ProteinMPNN) (Baker Lab)
 - Structure prediction: [AlphaFold2](https://github.com/google-deepmind/alphafold) (DeepMind)
 
+If you use Proto in your own work, cite their preprint:
+ 
+> Merchant AT, Guo D, Viggiano B, Brennan-Almaraz LE, Hur E, Mai T, Yin P, King SH, Ashley E, Hie BL. A high-level programming language for generative biology with Proto. bioRxiv (2026). doi: 10.64898/2026.06.22.733870
+ 
 ## License
-
-Check `proto-language`'s license before reusing its code (MIT at last check). This repo's own code/README: MIT (or your preference).
+ 
+`proto-language` is [MIT licensed](https://github.com/evo-design/proto-language). This repo's own code and README are released under the MIT License — see [LICENSE](./LICENSE).
+ 
