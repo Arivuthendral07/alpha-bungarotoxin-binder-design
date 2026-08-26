@@ -25,7 +25,7 @@ from proto_language.constraint import structure_iptm_constraint, structure_plddt
 from proto_language.constraint.protein_structure.structure_constraint_config import AlphaFold2BinderStructureConfig
 from proto_language.constraint.protein_structure.structure_confidence_constraint import StructureBasedConstraintConfig
 
-# --- Target definition -------------------------------------------------
+# --- Target definition ---
 toxin_sequence = "IVCHTTATIPSSAVTCPPGENLCYRKMWCDAFCSSRGKVVELGCAATCPSKKPYEEVTCCSTDKCNHPPKRQPG"
 target_segment = Segment(sequence=toxin_sequence, sequence_type="protein")
 binder = Segment(length=60, sequence_type="protein")
@@ -35,7 +35,7 @@ construct = Construct(segments=[binder, target_segment])
 hotspot_str = "A36,A38,A39,A40"
 hotspot_list = ["A36", "A38", "A39", "A40"]
 
-# --- AlphaFold2-binder structural confidence config ---------------------
+# --- AlphaFold2-binder structural confidence config ---
 binder_af2_config = AlphaFold2BinderStructureConfig(
     target_pdb=pdb_content,
     target_chains=["A"],
@@ -72,7 +72,7 @@ constraints = [
                function_config={"min_length": 40, "max_length": 80}, weight=0.5),
 ]
 
-# --- Optimize and run ----------------------------------------------------
+# --- Optimize and run ---
 optimizer = RejectionSamplingOptimizer(
     constructs=[construct], generators=[binder_gen], constraints=constraints,
     config=RejectionSamplingOptimizerConfig(num_samples=6, num_results=3),
@@ -81,7 +81,7 @@ optimizer = RejectionSamplingOptimizer(
 program = Program(optimizers=[optimizer], num_results=3)
 program.run()
 
-# --- Results ---------------------------------------------------------
+# --- Results ---
 df = optimizer.to_dataframe()
 print(df[['sequence', 'structure_iptm_constraint.score', 'structure_plddt_constraint.score']])
 
