@@ -39,6 +39,9 @@ pLDDT:    0.554
 Structure file: [`best_binder_candidate.cif`](./best_binder_candidate.cif)
 Full candidate pool: [`binder_candidates_batch2.csv`](./binder_candidates_batch2.csv)
 
+![Binder-toxin complex, molecular surface view, orange = designed binder, teal = alpha-bungarotoxin](./structure.png)
+*Molecular surface view of the designed complex (Mol\* Viewer). Orange = designed 60-residue binder; teal = alpha-bungarotoxin. The two chains form a continuous, non-clashing interface — confirmed independently via inter-chain atomic distance (see Validation methodology below).*
+
 ## Validation methodology
 
 A single confidence metric wasn't enough to trust on its own. Early in this project, a candidate with a similarly high ipTM (~0.90) turned out, on visual inspection, to not actually be in contact with the target — the score alone was misleading.
@@ -78,16 +81,15 @@ Requires a CUDA GPU (AlphaFold2 and RFdiffusion inference). Originally run on Go
 ## Credits
 
 - Toxin structure: [2ABX](https://www.rcsb.org/structure/2ABX), RCSB PDB
-- Design framework: [Proto](https://github.com/evo-design/proto-language) (Arc Institute)
+- Design framework: [Proto](https://github.com/evo-design/proto-language) (Arc Institute), MIT licensed
 - Backbone generation: [RFdiffusion](https://github.com/RosettaCommons/RFdiffusion) (Baker Lab)
 - Sequence design: [ProteinMPNN](https://github.com/dauparas/ProteinMPNN) (Baker Lab)
 - Structure prediction: [AlphaFold2](https://github.com/google-deepmind/alphafold) (DeepMind)
 
 If you use Proto in your own work, cite their preprint:
- 
+
 > Merchant AT, Guo D, Viggiano B, Brennan-Almaraz LE, Hur E, Mai T, Yin P, King SH, Ashley E, Hie BL. A high-level programming language for generative biology with Proto. bioRxiv (2026). doi: 10.64898/2026.06.22.733870
- 
+
 ## License
- 
+
 `proto-language` is [MIT licensed](https://github.com/evo-design/proto-language). This repo's own code and README are released under the MIT License — see [LICENSE](./LICENSE).
- 
